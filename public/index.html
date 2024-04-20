@@ -31,9 +31,9 @@
         height: 100vh;
         display: flex;
         justify-content: center; /* Centers content horizontally */
+        align-items: center;
         box-sizing: border-box; /* Includes padding in width and height calculations */
         padding: 20px;
-        align-items: center;
       }
 
       .ck-background {
@@ -44,6 +44,7 @@
 
       .ck-banner {
         text-align: center;
+        padding: 20px;
       }
 
       .ck-banner .title, .ck-banner .subtitle {
@@ -60,6 +61,12 @@
         font-size: 25px;
       }
 
+      .ck-border {
+        border-width: 0 0 0 1px;
+        border-color: #000;
+        border-style: solid;
+      }
+
       .footer {
         margin-top: -30px;
         width: 100%;
@@ -70,16 +77,35 @@
         background-color: #e8e8e8;
         padding: 2px;
         box-sizing: border-box;
-        font-size: 15px;
+        font-size: 13px;
+      }
+
+      /* Mobile-specific styles */
+      @media (max-width: 768px) {
+        .ck-page {
+          flex-wrap: wrap;
+          flex-direction: column; /* Stacks flex children vertically */
+        }
+
+        .ck-border {
+          border-width: 1px 0 0 0;
+        }
       }
     </style>
   </head>
   <body class="font-regular">
     <!-- div class="ck-page ck-background"></div -->
     <div class="ck-page">
-      <div class="ck-banner"><span class="title">C&amp;K AMSTERDAM</span><span class="subtitle">Software Consulting &amp; Development</span></div>
+      <div class="ck-banner">
+        <span class="title">C&amp;K AMSTERDAM</span>
+        <span class="subtitle">Software Consulting &amp; Development</span>
+      </div>
+      <div class="ck-banner ck-border">
+        <span class="subtitle">Emmastraat 3, 1071 JA</span>
+        <span class="subtitle">info &#64; cnkamsterdam.com</span>
+      </div>
     </div>
-    <div class="footer">info [-@-] cnkamsterdam.com</div>
+    <div class="footer">&copy; 2024 - BTW: NLXXXXXXXX</div>
   </body>
 </html>
 
