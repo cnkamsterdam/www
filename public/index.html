@@ -47,6 +47,43 @@
         padding: 20px;
       }
 
+      .ck-banner.flex {
+        display: flex;
+      }
+
+      .ck-banner .icon {
+        width: 64px;
+        height: 64px;
+      }
+
+      .icon.github {
+        background-image: url("img/github.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+
+      .icon.mail {
+        background-image: url("img/mail.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+
+      .icon.references {
+        background-image: url("img/references.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+
+      .icon.services {
+        background-image: url("img/services.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+
       .ck-banner .title, .ck-banner .subtitle {
         display: block;
         width: 100%;
@@ -100,12 +137,14 @@
         <span class="title">C&amp;K AMSTERDAM</span>
         <span class="subtitle">Software Consulting &amp; Development</span>
       </div>
-      <div class="ck-banner ck-border">
-        <span class="subtitle">Emmastraat 3, 1071 JA</span>
-        <span class="subtitle">info &#64; cnkamsterdam.com</span>
+      <div class="ck-banner ck-border flex">
+        <a class="icon mail" href="#contact" title="Contact"></a>
+        <a class="icon services" href="#services" title="Services"></a>
+        <a class="icon references" href="#references" title="References"></a>
+        <a class="icon github" href="https://github.com/cnkamsterdam" target="_blank" title="Source code"></a>
       </div>
     </div>
-    <div class="footer">&copy; 2024 - BTW: NLXXXXXXXX - </div>
+    <div class="footer">&copy; 2024 - info&#64;cnkamsterdam&#46;com - BTW: NLXXXXXXXX - Emmastraat 3, 1071JA, Amsterdam </div>
   </body>
 </html>
 
