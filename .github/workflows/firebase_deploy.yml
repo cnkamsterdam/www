@@ -19,3 +19,10 @@ jobs:
         firebase deploy --only hosting --token "$FIREBASE_TOKEN"
       env:
         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+
+    - name: Lighthouse Audit
+      uses: treosh/lighthouse-ci-action@v12
+      with:
+        urls: https://www.cnkamsterdam.com
+        budgetPath: .github/lighthouse-budget.json
+        uploadArtifacts: true
