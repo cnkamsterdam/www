@@ -1,163 +1,382 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>C&K Amsterdam - Software Consulting and Development</title>
+    <title>C&K Amsterdam - Software Consulting & Development</title>
+    <meta name="description" content="Enterprise software consulting, custom development, and production crisis response based in Amsterdam. Trusted by industry leaders in logistics and enterprise.">
+    <meta property="og:title" content="C&K Amsterdam - Software Consulting & Development">
+    <meta property="og:description" content="Enterprise software consulting, custom development, and production crisis response based in Amsterdam.">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/png" href="img/logo1.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200..700&display=swap" rel="stylesheet">
 
-    <style media="screen">
-
-      .font-regular{
-        font-family: "Raleway", sans-serif;
-        font-optical-sizing: auto;
-        font-weight: 400;
-        font-style: normal;
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
 
       html {
         scroll-behavior: smooth;
       }
 
-      html, body {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        overflow-x: hidden;
-        color: #222222;
+      body {
+        font-family: "Raleway", sans-serif;
+        color: #1a1a1a;
+        line-height: 1.6;
       }
 
-      .ck-page {
-        width: 100%;
-        height: 100vh;
+      /* --- Sections --- */
+
+      .section {
+        min-height: 100vh;
         display: flex;
-        justify-content: center; /* Centers content horizontally */
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
-        box-sizing: border-box; /* Includes padding in width and height calculations */
-        padding: 20px;
+        padding: 80px 24px;
       }
 
-      .ck-background {
-        background-image: url("img/BCard1.jpg");
-        background-repeat: no-repeat;
-        background-position: center;
+      .section--alt {
+        background-color: #f7f7f7;
       }
 
-      .ck-banner {
-        text-align: center;
-        padding: 20px;
-      }
-
-      .ck-banner.flex {
-        display: flex;
-      }
-
-      .ck-banner .icon {
-        width: 64px;
-        height: 64px;
-      }
-
-      .icon.github {
-        background-image: url("img/github.svg");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-      }
-
-      .icon.mail {
-        background-image: url("img/mail.svg");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-      }
-
-      .icon.references {
-        background-image: url("img/references.svg");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-      }
-
-      .icon.services {
-        background-image: url("img/services.svg");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-      }
-
-      .ck-banner .title, .ck-banner .subtitle {
-        display: block;
-        width: 100%;
-      }
-
-      .ck-banner .title {
-        font-size: 50px;
+      .section__title {
+        font-size: 13px;
         font-weight: 600;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: #999;
+        margin-bottom: 48px;
       }
 
-      .ck-banner .subtitle {
-        font-size: 25px;
+      /* --- Hero --- */
+
+      .hero {
+        text-align: center;
       }
 
-      .ck-border {
-        border-width: 0 0 0 1px;
-        border-color: #000;
-        border-style: solid;
+      .hero__title {
+        font-size: 52px;
+        font-weight: 600;
+        letter-spacing: 3px;
+        margin-bottom: 8px;
       }
+
+      .hero__subtitle {
+        font-size: 22px;
+        font-weight: 300;
+        color: #555;
+        margin-bottom: 64px;
+      }
+
+      .hero__nav {
+        display: flex;
+        gap: 40px;
+      }
+
+      .hero__nav a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        color: #666;
+        transition: color 0.2s;
+      }
+
+      .hero__nav a:hover {
+        color: #1a1a1a;
+      }
+
+      .hero__nav .icon {
+        width: 48px;
+        height: 48px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        opacity: 0.6;
+        transition: opacity 0.2s;
+      }
+
+      .hero__nav a:hover .icon {
+        opacity: 1;
+      }
+
+      .hero__nav .label {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+      }
+
+      /* Icon backgrounds */
+      .icon--mail { background-image: url("img/mail.svg"); }
+      .icon--services { background-image: url("img/services.svg"); }
+      .icon--references { background-image: url("img/references.svg"); }
+      .icon--github { background-image: url("img/github.svg"); }
+
+      /* --- Services --- */
+
+      .services {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 56px 64px;
+        max-width: 820px;
+      }
+
+      .service__title {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 12px;
+      }
+
+      .service__desc {
+        font-size: 15px;
+        font-weight: 300;
+        color: #555;
+        line-height: 1.8;
+      }
+
+      /* --- References --- */
+
+      .references {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 64px;
+        max-width: 900px;
+      }
+
+      .reference {
+        text-align: center;
+      }
+
+      .reference__company {
+        font-size: 38px;
+        font-weight: 600;
+        letter-spacing: 3px;
+        margin-bottom: 8px;
+      }
+
+      .reference__duration {
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #999;
+        margin-bottom: 28px;
+      }
+
+      .reference__desc {
+        font-size: 17px;
+        font-weight: 300;
+        color: #555;
+        line-height: 1.9;
+      }
+
+      .reference__desc a {
+        color: inherit;
+        text-decoration: none;
+        border-bottom: 1px solid #ddd;
+        transition: border-color 0.2s;
+      }
+
+      .reference__desc a:hover {
+        border-color: #1a1a1a;
+      }
+
+      /* --- Contact --- */
+
+      .contact__item {
+        text-align: center;
+        margin-bottom: 32px;
+      }
+
+      .contact__item:last-child {
+        margin-bottom: 0;
+      }
+
+      .contact__label {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: #999;
+        margin-bottom: 8px;
+      }
+
+      .contact__value {
+        font-size: 22px;
+        font-weight: 300;
+      }
+
+      .contact__value a {
+        color: inherit;
+        text-decoration: none;
+        border-bottom: 1px solid #ddd;
+        transition: border-color 0.2s;
+      }
+
+      .contact__value a:hover {
+        border-color: #1a1a1a;
+      }
+
+      /* --- Footer --- */
 
       .footer {
-        margin-top: -30px;
-        width: 100%;
-        height: 30px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: #e8e8e8;
-        padding: 2px;
-        box-sizing: border-box;
-        font-size: 13px;
+        padding: 24px;
+        background-color: #f0f0f0;
         text-align: center;
+        font-size: 13px;
+        color: #888;
       }
 
-      /* Mobile-specific styles */
+      /* --- Mobile --- */
+
       @media (max-width: 768px) {
-        .ck-page {
-          flex-wrap: wrap;
-          flex-direction: column; /* Stacks flex children vertically */
+        .section {
+          padding: 60px 20px;
         }
 
-        .ck-border {
-          border-width: 1px 0 0 0;
+        .hero__title {
+          font-size: 34px;
+          letter-spacing: 2px;
+        }
+
+        .hero__subtitle {
+          font-size: 17px;
+          margin-bottom: 48px;
+        }
+
+        .hero__nav {
+          gap: 28px;
+        }
+
+        .hero__nav .icon {
+          width: 40px;
+          height: 40px;
+        }
+
+        .services {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+
+        .service__title {
+          font-size: 18px;
+        }
+
+        .references {
+          grid-template-columns: 1fr;
+          gap: 48px;
+        }
+
+        .reference__company {
+          font-size: 28px;
+        }
+
+        .reference__desc {
+          font-size: 16px;
+        }
+
+        .contact__value {
+          font-size: 18px;
         }
       }
     </style>
   </head>
-  <body class="font-regular">
-    <!-- div class="ck-page ck-background"></div -->
-    <div class="ck-page">
-      <div class="ck-banner">
-        <span class="title">C&amp;K AMSTERDAM</span>
-        <span class="subtitle">Software Consulting &amp; Development</span>
+  <body>
+
+    <!-- Hero -->
+    <section class="section hero">
+      <h1 class="hero__title">C&amp;K AMSTERDAM</h1>
+      <p class="hero__subtitle">Software Consulting &amp; Development</p>
+      <nav class="hero__nav">
+        <a href="#services">
+          <div class="icon icon--services"></div>
+          <span class="label">Services</span>
+        </a>
+        <a href="#references">
+          <div class="icon icon--references"></div>
+          <span class="label">Work</span>
+        </a>
+        <a href="#contact">
+          <div class="icon icon--mail"></div>
+          <span class="label">Contact</span>
+        </a>
+        <a href="https://github.com/cnkamsterdam" target="_blank" rel="noopener">
+          <div class="icon icon--github"></div>
+          <span class="label">GitHub</span>
+        </a>
+      </nav>
+    </section>
+
+    <!-- Services -->
+    <section class="section section--alt" id="services">
+      <h2 class="section__title">Services</h2>
+      <div class="services">
+        <div class="service">
+          <h3 class="service__title">Enterprise Consulting</h3>
+          <p class="service__desc">We help enterprises navigate complex software challenges. From untangling legacy systems to designing scalable architectures, we bring clarity to hard technical problems.</p>
+        </div>
+        <div class="service">
+          <h3 class="service__title">Custom Development</h3>
+          <p class="service__desc">Tailored systems built to support your workflows. We develop solutions that fit your operations, not the other way around.</p>
+        </div>
+        <div class="service">
+          <h3 class="service__title">Crisis Response</h3>
+          <p class="service__desc">When production systems need immediate attention, we step in. Our team provides hands-on support for critical incidents, working alongside yours until stability is restored.</p>
+        </div>
+        <div class="service">
+          <h3 class="service__title">Architecture Advisory</h3>
+          <p class="service__desc">Strategic guidance on backend technologies and system design. We help you make the right technical decisions before they become expensive ones.</p>
+        </div>
       </div>
-      <div class="ck-banner ck-border flex">
-        <a class="icon mail" href="#contact" title="Contact"></a>
-        <a class="icon services" href="#services" title="Services"></a>
-        <a class="icon references" href="#references" title="References"></a>
-        <a class="icon github" href="https://github.com/cnkamsterdam" target="_blank" title="Source code"></a>
+    </section>
+
+    <!-- References -->
+    <section class="section" id="references">
+      <h2 class="section__title">References</h2>
+      <div class="references">
+        <div class="reference">
+          <div class="reference__company">DHL</div>
+          <div class="reference__duration">Long-term partnership</div>
+          <p class="reference__desc">Developing and maintaining custom logistics systems that support DHL's operational workflows. A partnership built on reliability and deep domain expertise in the logistics sector.</p>
+        </div>
+        <div class="reference">
+          <div class="reference__company">Farmore Automation</div>
+          <div class="reference__duration">Long-term partnership</div>
+          <p class="reference__desc">Supporting the development of <a href="https://planmysport.cloud" target="_blank" rel="noopener">planmysport.cloud</a>, a sports facility planning platform built by Farmore Automation in the Netherlands.</p>
+        </div>
       </div>
-    </div>
-    <div class="ck-page" id="contact">
-      <div class="ck-banner">
-        <span class="subtitle">info&#64;cnkamsterdam&#46;com</span>
+    </section>
+
+    <!-- Contact -->
+    <section class="section section--alt" id="contact">
+      <h2 class="section__title">Contact</h2>
+      <div>
+        <div class="contact__item">
+          <div class="contact__label">Email</div>
+          <div class="contact__value">
+            <a href="mailto:info@cnkamsterdam.com">info&#64;cnkamsterdam&#46;com</a>
+          </div>
+        </div>
+        <div class="contact__item">
+          <div class="contact__label">Address</div>
+          <div class="contact__value">Emmastraat 3, 1071JA, Amsterdam</div>
+        </div>
       </div>
-      <div class="ck-banner ck-border">
-        <span class="subtitle">Emmastraat 3, 1071JA, Amsterdam</span>
-      </div>
-    </div>
-    <div class="footer">&copy; 2024 - info&#64;cnkamsterdam&#46;com - Emmastraat 3, 1071JA, Amsterdam - BTW: NL005032300B31</div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      &copy; 2026 C&amp;K Amsterdam &middot; BTW: NL005032300B31
+    </footer>
+
   </body>
 </html>
-
