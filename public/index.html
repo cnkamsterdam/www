@@ -181,12 +181,15 @@
 
       .references {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 64px;
-        max-width: 900px;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 48px;
+        max-width: 1080px;
       }
 
       .reference {
+        display: grid;
+        grid-row: span 3;
+        grid-template-rows: subgrid;
         text-align: center;
       }
 
@@ -395,6 +398,11 @@
           <div class="reference__company">Farmore Automation</div>
           <div class="reference__duration">Long-term partnership</div>
           <p class="reference__desc">Supporting the development of <a href="https://planmysport.cloud" target="_blank" rel="noopener">planmysport.cloud</a>, a sports facility planning platform built by Farmore Automation in the Netherlands.</p>
+        </div>
+        <div class="reference">
+          <div class="reference__company">Wolkenkaart</div>
+          <div class="reference__duration">In-house project</div>
+          <p class="reference__desc">A real-time weather system for the Netherlands. Live radar, forecasts, and atmospheric data at <a href="https://wolkenkaart.nl" target="_blank" rel="noopener">wolkenkaart.nl</a>.</p>
         </div>
       </div>
     </section>
