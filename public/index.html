@@ -10,6 +10,20 @@
     <meta property="og:type" content="website">
     <link rel="icon" type="image/png" href="img/logo1.png">
 
+    <script>
+      function loadGA() {
+        var s = document.createElement('script');
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-9QVMPGZDDG';
+        s.async = true;
+        document.head.appendChild(s);
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-9QVMPGZDDG');
+      }
+      if (localStorage.getItem('cookie-consent') === 'accepted') loadGA();
+    </script>
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -263,6 +277,62 @@
         border-color: #2a2a2a;
       }
 
+      /* --- Cookie banner --- */
+
+      .cookie-banner {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #2a2a2a;
+        color: #ccc;
+        padding: 16px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 24px;
+        font-size: 14px;
+        font-weight: 300;
+        z-index: 1000;
+      }
+
+      .cookie-banner.hidden {
+        display: none;
+      }
+
+      .cookie-banner__buttons {
+        display: flex;
+        gap: 12px;
+        flex-shrink: 0;
+      }
+
+      .cookie-banner__btn {
+        font-family: "Raleway", sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        padding: 8px 20px;
+        border: none;
+        cursor: pointer;
+        transition: opacity 0.3s;
+      }
+
+      .cookie-banner__btn:hover {
+        opacity: 0.8;
+      }
+
+      .cookie-banner__btn--accept {
+        background: #fff;
+        color: #2a2a2a;
+      }
+
+      .cookie-banner__btn--decline {
+        background: transparent;
+        color: #999;
+        border: 1px solid #555;
+      }
+
       /* --- Footer --- */
 
       .footer {
@@ -424,6 +494,15 @@
       </div>
     </section>
 
+    <!-- Cookie consent -->
+    <div class="cookie-banner hidden" id="cookie-banner">
+      <span>This site uses cookies to improve your experience.</span>
+      <div class="cookie-banner__buttons">
+        <button class="cookie-banner__btn cookie-banner__btn--accept" id="cookie-accept">Accept</button>
+        <button class="cookie-banner__btn cookie-banner__btn--decline" id="cookie-decline">Decline</button>
+      </div>
+    </div>
+
     <!-- Footer -->
     <footer class="footer">
       &copy; 2026 C&amp;K Amsterdam &middot; BTW: NL005032300B31
@@ -440,6 +519,22 @@
       }, { threshold: 0.15 });
 
       document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+      (function() {
+        var consent = localStorage.getItem('cookie-consent');
+        if (consent) return;
+        var banner = document.getElementById('cookie-banner');
+        banner.classList.remove('hidden');
+        document.getElementById('cookie-accept').addEventListener('click', function() {
+          localStorage.setItem('cookie-consent', 'accepted');
+          banner.classList.add('hidden');
+          loadGA();
+        });
+        document.getElementById('cookie-decline').addEventListener('click', function() {
+          localStorage.setItem('cookie-consent', 'declined');
+          banner.classList.add('hidden');
+        });
+      })();
     </script>
   </body>
 </html>
